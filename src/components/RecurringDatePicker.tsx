@@ -5,16 +5,20 @@ import MonthlyPattern from "./MonthlyPattern";
 import DateRangePicker from "./DateRangePicker";
 import CalendarPreview from "./CalendarPreview";
 import { useRecurrenceStore } from "./recurrenceStore";
+import YearlyPattern from "./YearlyPattern";
+
 
 export default function RecurringDatePicker() {
   const { recurrence } = useRecurrenceStore();
 
   return (
     <div className="space-y-4 border p-4 rounded-xl shadow-md max-w-lg">
-      <RecurrenceOptions />
+      {/* <RecurrenceOptions /> */}
       <CustomInterval />
       {recurrence === "weekly" && <WeeklySelector />}
       {recurrence === "monthly" && <MonthlyPattern />}
+      {recurrence === "yearly" && <YearlyPattern />}
+
       <DateRangePicker />
       <CalendarPreview />
     </div>
